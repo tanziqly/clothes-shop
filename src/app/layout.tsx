@@ -1,3 +1,4 @@
+import Header from "@/widget/Header/ui/Header";
 import React from "react";
 
 interface LayoutProps {
@@ -7,7 +8,9 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <>
-      <header></header>
+      <header className="flex justify-center border-b border-neutral-300 dark:border-neutral-700">
+        <Header />
+      </header>
       <main>{children}</main>
       <footer></footer>
     </>
