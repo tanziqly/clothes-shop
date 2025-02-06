@@ -1,32 +1,63 @@
-import { Button } from "@/shared/ui/shadcn/button";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@/shared/ui/shadcn/button";
+import { Menu } from "lucide-react";
+import InputSearch from "@/features/InputSearch/ui/InputSearch";
+import { ModeToggle } from "@/shared/ui/mode-toggle";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
+
   return (
     <div className="flex justify-between w-full max-w-[1440px] px-4 py-4 mx-auto">
       <div className="flex items-center">
-        <h3 className="font-bold text-2xl pr-4 mr-4 border-r border-neutral-300 dark:border-neutral-700">
-          TellNur<span className="text-primary">.shop</span>
-        </h3>
-        <nav>
-          <ul className="flex space-x-4 dark:text-neutral-500">
+        <Link to="/">
+          <h3 className="font-bold text-2xl pr-4 mr-4 sm:border-r border-neutral-300 dark:border-neutral-700">
+            TellNur<span className="text-primary">.shop</span>
+          </h3>
+        </Link>
+        <nav className="hidden lg:block">
+          <ul className="flex space-x-4 lg:text-lg text-base text-neutral-500">
             <li>
-              <Link to="/">Home</Link>
+              <Link className="hover:text-black" to="/">
+                Home
+              </Link>
             </li>
             <li>
-              <Link to="/">All products</Link>
+              <Link className="hover:text-black" to="/">
+                All products
+              </Link>
             </li>
             <li>
-              <Link to="/">New Arrivals</Link>
+              <Link className="hover:text-black" to="/">
+                New Arrivals
+              </Link>
             </li>
             <li>
-              <Link to="/">Brands</Link>
+              <Link className="hover:text-black" to="/">
+                Brands
+              </Link>
             </li>
           </ul>
         </nav>
       </div>
-      {/* <Input type="text" /> */}
-      <div className="flex items-center space-x-2">
+
+      <InputSearch className="sm:flex hidden" />
+      <div className="flex gap-2">
+        <ModeToggle />
+
+        <div className="lg:hidden flex items-center ml-2 space-x-2">
+          <Button variant="outline" size="icon" onClick={toggleMenu}>
+            <Menu className="h-5 w-5" />
+          </Button>
+        </div>
+      </div>
+      <div className="items-center lg:flex hidden ml-4 space-x-2">
         <Button variant="outline" asChild>
           <Link className="text-base" to="/">
             Sign in
@@ -38,6 +69,9 @@ const Header = () => {
           </Link>
         </Button>
       </div>
+
+      {/* Меню для мобильных устройств */}
+      {isMenuOpen && <MobileMenu onClose={toggleMenu} />}
     </div>
   );
 };
