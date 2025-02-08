@@ -7,8 +7,8 @@ interface MobileMenuProps {
 }
 
 const MobileMenu = ({ onClose }: MobileMenuProps) => (
-  <div className="lg:hidden absolute top-[70px]  right-0 w-full max-w-[450px] h-full bg-white dark:bg-background shadow-lg rounded-lg p-4">
-    <ul className="space-y-2">
+  <div className="lg:hidden absolute top-[70px] border-l right-0 w-full max-w-[450px] h-screen bg-neutral-100 dark:bg-neutral-950 shadow-lg rounded-lg p-4">
+    <ul className="flex flex-col gap-2 space-y-2">
       <li className="w-full">
         <Link className="hover:text-black w-full" to="/" onClick={onClose}>
           Home
@@ -30,6 +30,9 @@ const MobileMenu = ({ onClose }: MobileMenuProps) => (
         </Link>
       </li>
       <li>
+        <InputSearch className="-mx-4" />
+      </li>
+      <li>
         <div className="items-center space-x-2">
           <Button variant="outline" asChild>
             <Link className="text-base" to="/">
@@ -42,9 +45,6 @@ const MobileMenu = ({ onClose }: MobileMenuProps) => (
             </Link>
           </Button>
         </div>
-      </li>
-      <li>
-        <InputSearch className="-mx-4" />
       </li>
     </ul>
   </div>

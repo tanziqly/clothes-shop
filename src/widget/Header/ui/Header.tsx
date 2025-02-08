@@ -5,6 +5,7 @@ import { Menu } from "lucide-react";
 import InputSearch from "@/features/InputSearch/ui/InputSearch";
 import { ModeToggle } from "@/shared/ui/mode-toggle";
 import MobileMenu from "./MobileMenu";
+import { ShoppingCart } from "lucide-react";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -22,7 +23,7 @@ const Header = () => {
           </h3>
         </Link>
         <nav className="hidden lg:block">
-          <ul className="flex space-x-4 lg:text-lg text-base text-neutral-500">
+          <ul className="flex space-x-4 text-lg max-[1046px]:text-base text-neutral-500">
             <li>
               <Link className="hover:text-black" to="/">
                 Home
@@ -46,11 +47,14 @@ const Header = () => {
           </ul>
         </nav>
       </div>
-
       <InputSearch className="sm:flex hidden" />
       <div className="flex gap-2">
         <ModeToggle />
-
+        <Button asChild variant="outline" size="icon">
+          <Link to="/cart">
+            <ShoppingCart size={18} />
+          </Link>
+        </Button>
         <div className="lg:hidden flex items-center ml-2 space-x-2">
           <Button variant="outline" size="icon" onClick={toggleMenu}>
             <Menu className="h-5 w-5" />
@@ -69,8 +73,6 @@ const Header = () => {
           </Link>
         </Button>
       </div>
-
-      {/* Меню для мобильных устройств */}
       {isMenuOpen && <MobileMenu onClose={toggleMenu} />}
     </div>
   );
