@@ -13,7 +13,7 @@ const HomeTopSelling = () => {
     <>
       {/* Десктопная версия */}
       <div className="md:flex hidden justify-center">
-        <CategoryForm title="Top selling">
+        <CategoryForm title="Top Selling">
           {Array.from({ length: 4 }, (_, index) => (
             <ProductCard key={index} />
           ))}
@@ -35,11 +35,6 @@ const HomeTopSelling = () => {
             <CarouselNext className="right-2" />
           </Carousel>
         </CategoryForm>
-      </div>
-
-      {/* Разделительная линия */}
-      <div className="flex justify-center">
-        <hr className="bg-neutral-500 w-full max-w-[1440px]" />
       </div>
     </>
   );
