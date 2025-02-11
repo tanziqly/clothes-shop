@@ -5,7 +5,7 @@ import productImg from "./assets/productImg.png";
 const ProductCard = () => {
   return (
     <Link to="/">
-      <article className="flex flex-col gap-4">
+      <article className="flex flex-col gap-4 w-fit">
         <div className="bg-[#F0EEED] overflow-hidden dark:bg-neutral-800 w-[295px] h-[295px] rounded-xl">
           <img src={productImg} alt="" />
         </div>
