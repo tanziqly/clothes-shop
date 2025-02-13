@@ -8,7 +8,7 @@ import Party from "./assets/Party.png";
 const HomeDressStyle = () => {
   return (
     <section className="flex justify-center px-5">
-      <div className="max-w-[1440px] w-full bg-neutral-200 md:p-16 p-6 rounded-3xl flex flex-col items-center">
+      <div className="max-w-[1440px] w-full bg-neutral-200 dark:bg-neutral-700 md:p-16 p-6 rounded-3xl flex flex-col items-center">
         <h2 className="h2 mb-16">Browse By Dress Style</h2>
         <div className="flex flex-col gap-5">
           <div className="flex md:flex-row flex-col gap-5">
