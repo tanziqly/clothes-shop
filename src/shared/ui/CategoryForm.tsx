@@ -12,7 +12,7 @@ const CategoryForm: FC<CategoryFormProps> = ({ title, children }) => {
     <section className="flex justify-center py-20">
       <div className="flex items-center px-5 flex-col max-w-[1440px] w-full">
         {/* Заголовок */}
-        <h2 className="text-center text-5xl font-bold">{title}</h2>
+        <h2 className="text-center h2">{title}</h2>
 
         {/* Контейнер для дочерних элементов */}
         <div className="flex flex-col md:grid md:grid-cols-2 lg:grid-cols-4 gap-5 mt-14 mb-9 w-full">

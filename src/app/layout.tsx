@@ -1,3 +1,4 @@
+import Footer from "@/widget/Footer/ui/Footer";
 import Header from "@/widget/Header/ui/Header";
 import React from "react";
 
@@ -12,7 +13,9 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         <Header />
       </header>
       <main>{children}</main>
-      <footer></footer>
+      <footer className="flex relative pt-32 flex-col gap-12 dark:bg-neutral-800 bg-[#F0F0F0] items-center px-5 mt-64">
+        <Footer />
+      </footer>
     </div>
   );
 };

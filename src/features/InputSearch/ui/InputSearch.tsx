@@ -1,9 +1,9 @@
 import { Input } from "@/shared/ui/shadcn/input";
 import { Search } from "lucide-react";
-import clsx from "clsx"; // Для удобного объединения классов
+import clsx from "clsx";
 
 interface SearchInputProps {
-  className?: string; // Пропс для кастомизации классов
+  className?: string;
 }
 
 const SearchInput = ({ className }: SearchInputProps) => (
@@ -17,11 +17,7 @@ const SearchInput = ({ className }: SearchInputProps) => (
     <Search className="absolute left-6 text-gray-500" />
 
     {/* Поле ввода */}
-    <Input
-      className="pl-12 mx-4" // Добавляем padding слева для размещения иконки
-      placeholder="Type something..."
-      type="text"
-    />
+    <Input className="pl-12 mx-4" placeholder="Type something" type="text" />
   </div>
 );
 
