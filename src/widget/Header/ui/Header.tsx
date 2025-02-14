@@ -63,12 +63,12 @@ const Header = () => {
       </div>
       <div className="items-center lg:flex hidden ml-4 space-x-2">
         <Button variant="outline" asChild>
-          <Link className="text-base" to="/">
+          <Link className="text-base" to="/sign-in">
             Sign in
           </Link>
         </Button>
         <Button asChild>
-          <Link className="text-base" to="/">
+          <Link className="text-base" to="/sign-up">
             Sign up
           </Link>
         </Button>

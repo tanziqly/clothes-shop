@@ -11,7 +11,7 @@ import { Input } from "@/shared/ui/shadcn/input";
 import { Label } from "@/shared/ui/shadcn/label";
 import { Link } from "react-router-dom";
 
-export function LoginForm({
+export function RegForm({
   className,
   ...props
 }: React.ComponentPropsWithoutRef<"div">) {
@@ -22,14 +22,18 @@ export function LoginForm({
           <Button className="w-fit" asChild variant="outline" size="sm">
             <Link to="/">{"<"} Back to Home</Link>
           </Button>
-          <CardTitle className="text-2xl">Login</CardTitle>
+          <CardTitle className="text-2xl">Create an account</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            Enter fields below to create your account
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form>
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-4">
+              <div className="grid gap-2">
+                <Label htmlFor="email">Username</Label>
+                <Input id="username" type="text" required />
+              </div>
               <div className="grid gap-2">
                 <Label htmlFor="email">Email</Label>
                 <Input
@@ -40,28 +44,24 @@ export function LoginForm({
                 />
               </div>
               <div className="grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
-                  <a
-                    href="#"
-                    className="ml-auto inline-block text-sm underline-offset-4 hover:underline"
-                  >
-                    Forgot your password?
-                  </a>
-                </div>
+                <Label htmlFor="password">Password</Label>
+                <Input id="password" type="password" required />
+              </div>
+              <div className="grid gap-2">
+                <Label htmlFor="password">Repeat password</Label>
                 <Input id="password" type="password" required />
               </div>
               <Button type="submit" className="w-full">
-                Login
+                Create
               </Button>
               <Button variant="outline" className="w-full">
-                Login with Google
+                Continue with Google
               </Button>
             </div>
             <div className="mt-4 text-center text-sm">
-              Don&apos;t have an account?{" "}
-              <Link to="/sign-up" className="underline underline-offset-4">
-                Sign up
+              Already have an account?{" "}
+              <Link to="/sign-in" className="underline underline-offset-4">
+                Sign in
               </Link>
             </div>
           </form>
